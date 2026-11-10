@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #000000;
+  --color-graphite: #1a1c1f;
+  --color-rule: #2b2e33;
+  --color-steel: #8e949c;
+  --color-chrome: #e6e8eb;
+  --color-talc: #eef0f2;
+  --color-ink: #15171a;
+  --color-slate: #4a4f57;
+  --color-mist: #dfe2e6;
+  --color-pole: #d0312d;
+
+  --font-display: var(--font-unbounded), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-void);
+  color: var(--color-chrome);
+  -webkit-tap-highlight-color: transparent;
+  scroll-padding-top: 5rem;
+}
+
+@media (pointer: fine) {
+  html {
+    overscroll-behavior: none;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+[role="tab"],
+[role="radio"] {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-chrome);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-chrome);
+  color: var(--color-void);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
